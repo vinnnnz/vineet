@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>About Me -- Vineet Kumar</title>
+
+<link type="text/css" href="../static/style/xcenter.css"
+	th:href="@{/style/main.css}" rel="stylesheet" media="screen" />
+	<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet"> -->
+</head>
+<body>
+
+	<div th:replace="fragments/rightpanel :: rightpanel"></div>
+	<div class="about_me_wrapper">
+		<div class="author_about">
+			<div class='about'>I AM VINEET 
+			KUMAR<div style="font-size:0.3em;line-height: 3em;"> Software Developer</div></div>
+			<div style="font-size:0.5em;width: 80%;margin: 0 auto;top: 150px;position: relative;letter-spacing: 0.2em;">I am the Software Developer who is ready to involve in any type of project. I love designing complex architecture in simple and efficient way.</div>
+		</div>
+		<div class='author_image'></div>
+	</div>
+	<div th:replace="fragments/rightpanel :: footer"></div>
+	
+	
+	
+	<script>
+		dojoConfig = {
+			parseOnLoad : true,
+			async : true
+		};
+	</script>
+	<script th:src="@{/js/dojo/dojo.js}"></script>
+	<script>
+		require(["dojo/parser", "dojo/ready", "dojo/dom", "dojo/dom-class", "dojo/on"], function(parser, ready, dom, domClass, on) {
+			ready(function() {
+				console.log(dom.byId("nav"));
+				on(dom.byId("nav"), "click", function() { 
+					if(domClass.contains(dom.byId("rpanel"), "rightpanel deactive")) {
+						domClass.remove(dom.byId("rpanel"), "rightpanel deactive");
+						domClass.add(dom.byId("rpanel"), "rightpanel active");
+						dom.byId("nav").innerHTML = "&raquo;";
+					} else {
+						domClass.remove(dom.byId("rpanel"), "rightpanel active");
+						domClass.add(dom.byId("rpanel"), "rightpanel deactive");
+						dom.byId("nav").innerHTML = "&laquo;";
+					}
+				});
+					
+			});
+		});
+	</script>
+</body>
+</html>

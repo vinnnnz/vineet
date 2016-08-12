@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Contact -- Vineet Kumar</title>
+
+<link type="text/css" href="../static/style/xcenter.css"
+	th:href="@{/style/main.css}" rel="stylesheet" media="screen" />
+<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet"> -->
+</head>
+<body>
+
+	<div th:replace="fragments/rightpanel :: rightpanel"></div>
+	<div class="contact_me_wrapper">
+		<div class='form_wrapper'>
+		<div class="form_title">Stay with me</div>
+			<form action="" method="post">
+				<label for="field1"><span>Name <span class="required">*</span></span><input
+					type="text" class="input-field" name="field1" value="" /></label> <label
+					for="field2"><span>Email <span class="required">*</span></span><input
+					type="text" class="input-field" name="field2" value="" /></label> <label><span>Telephone</span><input type="text"
+					class="tel-number-field" name="tel_no_3" value="" maxlength="10" /></label>
+				<label for="field4"><span>Regarding</span><select
+					name="field4" class="select-field">
+						<option value="General Question">General</option>
+						<option value="Advertise">Advertisement</option>
+						<option value="Partnership">Partnership</option>
+				</select></label> <label for="field5"><span>Message <span
+						class="required">*</span></span> <textarea name="field5"
+						class="textarea-field"></textarea></label> <label><span>&nbsp;</span><input
+					type="submit" value="Submit" /></label>
+			</form>
+		</div>
+	</div>
+	<div th:replace="fragments/rightpanel :: footer"></div>
+
+
+
+	<div th:replace="fragments/script :: script"></div>
+</body>
+</html>
